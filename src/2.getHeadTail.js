@@ -1,10 +1,16 @@
 // Write functions that will return `head` and `tail` of Array
 
-const getHeadTail = (numbers, getArg) => {
-  let [head, ...tail] = [...numbers]
+const getHead = (numbers) => {
+  let [head, ] = [...numbers]
 
-  return getArg === 'head' ? [head] : tail
+  return [head]
+}
+const getTail = (numbers) => {
+  let [, ...tail] = [...numbers]
+
+  return tail
 }
 
-console.log(getHeadTail([1, 2, 3], 'head')) // => [1]
-console.log(getHeadTail([1, 2, 3, 5, 6], 'tail')) // => [2, 3]
+console.log(getHead([1, 2, 3])) // => [1]
+console.log(getTail([1, 2, 3, 5, 6])) // => [2, 3]
+
